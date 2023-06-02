@@ -1,6 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/windows,macos,visualstudio,visualstudiocode,dotnetcore,angular,csharp,aspnetcore
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,macos,visualstudio,visualstudiocode,dotnetcore,angular,csharp,aspnetcore
 
+HelpDeskContext.cs
+
+
 ### Angular ###
 ## Angular ##
 # compiled output
