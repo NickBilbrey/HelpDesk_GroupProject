@@ -23,7 +23,10 @@ export class HelpDeskComponent implements OnInit {
 
   getAllTickets() {
     this.ticketService.getTickets().subscribe(result => {
-      this.tickets = result;
+      this.tickets = result.map(ticket => ({
+        ...ticket,
+        expanded: false // Add the 'expanded' property to each ticket object
+      }));
       console.log(this.tickets);
     });
   }
@@ -41,5 +44,7 @@ export class HelpDeskComponent implements OnInit {
       console.log(this.bookMark)
     })
   }
-
+  /* toggleTicket(ticket: any) {
+    ticket.expanded = !ticket.expanded;
+  } */
 }

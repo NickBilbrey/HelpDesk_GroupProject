@@ -3,3 +3,21 @@
 <ng-container *ngFor="let x of tickets">{{x.body}}, </ng-container>
 <ng-container *ngFor="let y of user">{{y.firstName}}, </ng-container>
 <ng-container *ngFor="let z of bookMark">{{z.userId}},</ng-container>
+
+
+<ul class="ticket-list">
+    <li *ngFor="let ticket of tickets">
+      <div>
+        
+        <div>
+            <h2>Ticket ID: {{ ticket.ticketId }}</h2>
+            <p>{{ ticket.body }}</p>
+            <p>Resolved?: {{ ticket.solved ? 'Yes' : 'No' }}</p>
+            <p>Solution: {{ ticket.solution ? ticket.solution : 'N/A' }}</p>
+            <p>Solved by: {{ ticket.whoSolved ? ticket.whoSolved : 'N/A' }}</p>
+            <p>Bookmark: {{ ticket.bookmarked ? 'Yes' : 'No' }}</p>
+        </div>
+      </div>
+      
+    </li>
+  </ul>

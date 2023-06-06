@@ -5,13 +5,14 @@ export interface User {
 }
 
 export interface Tickets {
-    ticketID: number;
+    ticketId: number;
     author: number;
     body: string;
     solved: boolean;
     bookmarked: boolean;
     solution: string | null;
     whoSolved: number | null;
+    expanded?: boolean;
   }
 
 export interface BookMark {
