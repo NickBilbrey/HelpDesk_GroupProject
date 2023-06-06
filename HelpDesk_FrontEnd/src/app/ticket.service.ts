@@ -13,6 +13,14 @@ export class TicketService {
   private url: string = 'https://localhost:7233'
 
   getTickets(): Observable<Tickets[]> {
-    return this.http.get<Tickets[]>(this.url + '/api/Tickets')
+    return this.http.get<Tickets[]>(this.url + '/api/Tickets');
+  }
+
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(this.url + '/api/Users')
+  }
+
+  getBookMarks(): Observable<BookMark[]> {
+    return this.http.get<BookMark[]>(this.url + '/api/BookMarks')
   }
 }

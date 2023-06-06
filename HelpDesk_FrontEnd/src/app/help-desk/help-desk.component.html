@@ -1,5 +1,5 @@
-<p>help-desk works!</p>
 
-<div *ngFor="let ticket of tickets">
-    <p>{{ticket.Body}}</p>
-</div>
+
+<ng-container *ngFor="let x of tickets">{{x.body}}, </ng-container>
+<ng-container *ngFor="let y of user">{{y.firstName}}, </ng-container>
+<ng-container *ngFor="let z of bookMark">{{z.userId}},</ng-container>

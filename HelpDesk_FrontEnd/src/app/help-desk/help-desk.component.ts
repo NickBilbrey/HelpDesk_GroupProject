@@ -11,15 +11,35 @@ export class HelpDeskComponent implements OnInit {
 
   constructor(private ticketService: TicketService){}
 
-  user?: User;
+  user: User[] = [];
   tickets: Tickets[] = [];
+  bookMark: BookMark[] = [];
 
   ngOnInit(): void{
     this.getAllTickets();
+    this.getAllUsers();
+    this.getAllBookMarks();
   }
 
   getAllTickets() {
-    this.ticketService.getTickets().subscribe(result => console.log(result));
+    this.ticketService.getTickets().subscribe(result => {
+      this.tickets = result;
+      console.log(this.tickets);
+    });
+  }
+
+  getAllUsers() {
+    this.ticketService.getUsers().subscribe(result => {
+      this.user = result;
+      console.log(this.user)
+    })
+  }
+
+  getAllBookMarks() {
+    this.ticketService.getBookMarks().subscribe(result => {
+      this.bookMark = result;
+      console.log(this.bookMark)
+    })
   }
 
 }
