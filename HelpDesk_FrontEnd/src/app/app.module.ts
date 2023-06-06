@@ -8,6 +8,8 @@ import { HelpDeskComponent } from './help-desk/help-desk.component';
 import { BookmarksComponent } from './bookmarks/bookmarks.component';
 import { BookmarkFormComponent } from './bookmark-form/bookmark-form.component';
 import { SolvedTicketComponent } from './solved-ticket/solved-ticket.component';
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { SolvedTicketComponent } from './solved-ticket/solved-ticket.component';
     HelpDeskComponent,
     BookmarksComponent,
     BookmarkFormComponent,
-    SolvedTicketComponent
+    SolvedTicketComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
