@@ -2,11 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User, Tickets, BookMark } from './user';
+import { map, switchMap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TicketService {
+
+  currentUser?: User;
 
   constructor(private http: HttpClient) { }
 
@@ -23,4 +26,15 @@ export class TicketService {
   getBookMarks(): Observable<BookMark[]> {
     return this.http.get<BookMark[]>(this.url + '/api/BookMarks')
   }
+
+  getUserById(userId: number): Observable<User> {
+    return this.http.get<User>(this.url + '/api/Users/' + userId)
+  }
+
+  addUser(firstName: string, email: string): Observable<User> {
+    const user: User = { firstName, email }; // Create the user object without iD because it auto increments
+    return this.http.post<User>(this.url + '/api/Users', user);
+  }
+  
+
 }
