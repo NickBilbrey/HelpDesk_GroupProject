@@ -11,6 +11,8 @@ export class TicketService {
 
   currentUser?: User;
 
+  currentTicket?: Tickets;
+
   constructor(private http: HttpClient) { }
 
   private url: string = 'https://localhost:7233'

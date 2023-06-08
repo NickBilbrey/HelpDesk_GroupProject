@@ -30,7 +30,7 @@
           <p>Solved by: {{ ticket.whoSolved ? ticket.whoSolved : 'N/A' }}</p>
           <p>Bookmark: {{ ticket.bookmarked ? 'Yes' : 'No' }}</p>
           <button (click)="goToBookmark()" class="bookmark-button">Bookmark</button>
-          <button *ngIf="!ticket.solved" (click)="goToSolvedTicket()" class="resolve-button">Resolve Ticket</button>
+          <button *ngIf="!ticket.solved" (click)="goToSolvedTicket(ticket)" class="resolve-button">Resolve Ticket</button>
       </div>
     </div>
   </li>
