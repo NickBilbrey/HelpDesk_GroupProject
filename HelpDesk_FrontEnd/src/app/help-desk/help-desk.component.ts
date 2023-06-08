@@ -52,7 +52,8 @@ export class HelpDeskComponent implements OnInit {
   goToBookmark() {
     this.router.navigate(['/bookmarks']); // Update '/bookmark' with the actual route of the bookmark component
   }
-  goToSolvedTicket() {
+  goToSolvedTicket(ticketToSolve : Tickets) {
+    this.ticketService.currentTicket = ticketToSolve;
     this.router.navigate(['/solved-ticket']); // Update '/solved-ticket' with the actual route of the solved-ticket component
   }
   // Define a newTicket object to hold the values of the new ticket form
