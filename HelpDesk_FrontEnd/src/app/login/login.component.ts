@@ -19,13 +19,13 @@ export class LoginComponent{
         if (user) {
           this.ticketService.currentUser = user; // Assign currentUser value
           console.log('User logged in:', user);
-          this.router.navigate(['/helpDesk']); // Route to the HelpDeskComponent
+          this.router.navigate(['/help-desk']); // Route to the HelpDeskComponent
         } else {
           this.ticketService.addUser(firstName, email).subscribe({
             next: (createdUser: User) => {
               this.ticketService.currentUser = createdUser;
               console.log('New user created:', createdUser);
-              this.router.navigate(['/helpDesk']); // Route to the HelpDeskComponent
+              this.router.navigate(['/help-desk']); // Route to the HelpDeskComponent
             },
             error: (error: any) => {
               console.log('Error creating user:', error);

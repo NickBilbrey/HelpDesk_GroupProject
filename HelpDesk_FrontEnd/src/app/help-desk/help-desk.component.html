@@ -2,15 +2,15 @@
 
 <nav class="navigation-bar">
   <h1 class="help-desk-title">Grand Circus Help Desk</h1>
-  <a routerLink="/tickets" class="nav-link">Bookmarked Tickets</a>
+  <a routerLink="/bookmarks" class="nav-link">Bookmarked Tickets</a>
   <span class="nav-separator">|</span>
-  <a routerLink="/solved-ticket" class="nav-link">Solved Tickets</a>
+  <a routerLink="/help-desk" class="nav-link">help-desk</a>
   <!-- Add more links for other pages as needed -->
 </nav>
 
 
 <form (ngSubmit)="createTicket(currentUser?.id)" class="new-ticket-form">
-  <h1>Hello {{currentUser?.firstName}} {{currentUser?.id}}</h1>
+  <h1>Hello {{currentUser?.firstName}}</h1>
   <h2>Create New Ticket</h2>
   <label for="body">Body:</label>
   <textarea id="body" [(ngModel)]="newTicket.body" name="body" required></textarea>
@@ -29,7 +29,7 @@
           <p>Solution: {{ ticket.solution ? ticket.solution : 'N/A' }}</p>
           <p>Solved by: {{ ticket.whoSolved ? ticket.whoSolved : 'N/A' }}</p>
           <p>Bookmark: {{ ticket.bookmarked ? 'Yes' : 'No' }}</p>
-          <button (click)="goToBookmark()" class="bookmark-button">Bookmark</button>
+          <button (click)="goToBookmark(ticket)" class="bookmark-button">Bookmark</button>
           <button *ngIf="!ticket.solved" (click)="goToSolvedTicket(ticket)" class="resolve-button">Resolve Ticket</button>
       </div>
     </div>

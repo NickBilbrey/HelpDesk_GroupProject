@@ -19,6 +19,7 @@ export class HelpDeskComponent implements OnInit {
   user: User[] = [];
   tickets: Tickets[] = [];
   bookMark: BookMark[] = [];
+  
   ngOnInit(): void{
     this.getAllTickets();
     this.getAllUsers();
@@ -49,7 +50,8 @@ export class HelpDeskComponent implements OnInit {
   /* toggleTicket(ticket: any) {
     ticket.expanded = !ticket.expanded;
   } */
-  goToBookmark() {
+  goToBookmark(bookmark: Tickets) {
+    this.ticketService.favorites.push(bookmark)
     this.router.navigate(['/bookmarks']); // Update '/bookmark' with the actual route of the bookmark component
   }
   goToSolvedTicket(ticketToSolve : Tickets) {
