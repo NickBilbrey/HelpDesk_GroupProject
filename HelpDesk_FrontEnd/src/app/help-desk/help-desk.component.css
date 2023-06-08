@@ -1,69 +1,160 @@
+.navigation-bar {
+  background-color: #526D84;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+.nav-link {
+  color: #FFFFFF; /* Match the text color with the tickets */
+  text-decoration: none;
+  margin-right: 10px;
+  font-family: 'Roboto Mono', monospace; /* Apply the same font as the tickets */
+  font-size: 16px; /* Adjust the font size as needed */
+}
+.nav-separator {
+  color: #FFFFFF;
+  margin-right: 10px;
+}
+.help-desk-title {
+  font-size: 24px;
+  font-family: 'Roboto Mono', monospace;
+  color: #FFFFFF;
+  margin-right: auto;
+}
+.nav-link:hover {
+  text-decoration: underline;
+}
+.help-desk-title {
+  font-size: 32px; /* Adjust the font size as needed */
+  font-family: 'Roboto Mono', monospace; /* Apply the same font as the tickets */
+  color: #FFFFFF; /* Set the desired text color */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Add a small text shadow */
+}
+body {
+  background-color: #A3A3A3; /* Light gray background color */
+  margin: 0; /* Reset default margin */
+}
+.new-ticket-form {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+.new-ticket-form h2 {
+  font-size: 18px;
+  color: #526D84;
+  margin-bottom: 10px;
+}
+.new-ticket-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+.new-ticket-form input,
+.new-ticket-form textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+.create-ticket-button {
+  padding: 5px 10px;
+  background-color: #526D84;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 14px;
+  cursor: pointer;
+}
+.create-ticket-button:hover {
+  background-color: #405466;
+}
+/* Adjust existing CSS as needed */
 .ticket-list {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
     padding: 0;
   }
-  
   .ticket-item {
-    width: 120px;
-    height: 120px;
-    background-color: #ffffff;
-    color: #333333;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    margin: 10px;
-    cursor: pointer;
-    transition: width 0.3s, height 0.3s;
-    overflow: hidden;
-  }
-  
+  border: 1px solid #ccc;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+  font-family: 'Roboto Mono', monospace;
+}
+.ticket-item h2 {
+  font-weight: bold; /* Make the <h2> text bold */
+  color: #526D84; /* Set the text color to a greyish blue */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Add a small text shadow */
+}
+.ticket-item button {
+  margin-top: 10px; /* Add top margin for spacing */
+  margin-right: 10px;
+  background-color: #526D84; /* Set the background color to match the h2 item */
+  color: #FFFFFF; /* Set the text color */
+  border: none; /* Remove the button border */
+  padding: 8px 16px; /* Add padding for better appearance */
+  border-radius: 4px; /* Add border radius for rounded corners */
+  font-family: 'Roboto Mono', monospace; /* Apply the desired font */
+  cursor: pointer; /* Add a cursor style on hover */
+}
+.ticket-item button:hover {
+  opacity: 0.8; /* Reduce opacity on hover for visual feedback */
+}
+.ticket-item button:last-child {
+  margin-right: 0;
+}
+.ticket-item.solved {
+  opacity: 0.5; /* Reduce opacity to slightly grey out the ticket item */
+}
   .expanded {
     width: 300px;
     height: 300px;
   }
-  
   .expanded .ticket-item {
     width: 100%;
     height: 100%;
     margin: 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   }
-  
   .expanded .expanded-content {
     display: block;
   }
-  
   .expanded .ticket-item h3 {
     margin-top: 10px;
   }
-  
   .expanded .ticket-item p {
     margin: 5px 0;
   }
-  
   .expanded .ticket-item p:last-child {
     margin-bottom: 0;
   }
-  
   .expanded .expanded-content {
     opacity: 0;
     height: 0;
     overflow: hidden;
     transition: opacity 0.3s, height 0.3s;
   }
-  
   .expanded .expanded-content p {
     margin: 5px 0;
   }
-  
   .expanded .expanded-content p:last-child {
     margin-bottom: 0;
   }
-  
   .expanded .expanded-content.show {
     opacity: 1;
     height: auto;
     padding: 10px;
     transition-delay: 0.2s;
   }
+
+
+
+
+

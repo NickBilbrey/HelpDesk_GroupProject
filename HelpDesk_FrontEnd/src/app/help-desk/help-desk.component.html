@@ -1,23 +1,49 @@
 
 
-<ng-container *ngFor="let x of tickets">{{x.body}}, </ng-container>
-<ng-container *ngFor="let y of user">{{y.firstName}}, </ng-container>
-<ng-container *ngFor="let z of bookMark">{{z.userId}},</ng-container>
+<nav class="navigation-bar">
+  <h1 class="help-desk-title">Grand Circus Help Desk</h1>
+  <a routerLink="/tickets" class="nav-link">Bookmarked Tickets</a>
+  <span class="nav-separator">|</span>
+  <a routerLink="/solved-tickets" class="nav-link">Solved Tickets</a>
+  <!-- Add more links for other pages as needed -->
+</nav>
+
+
+<form (ngSubmit)="createTicket(currentUser?.id)" class="new-ticket-form">
+  <h1>Hello {{currentUser?.firstName}} {{currentUser?.id}}</h1>
+  <h2>Create New Ticket</h2>
+  <label for="body">Body:</label>
+  <textarea id="body" [(ngModel)]="newTicket.body" name="body" required></textarea>
+  <button type="submit" class="create-ticket-button">Create Ticket</button>
+</form>
 
 
 <ul class="ticket-list">
-    <li *ngFor="let ticket of tickets">
+  <li *ngFor="let ticket of tickets" class="ticket-item" [ngClass]="{ 'solved': ticket.solved }">
+    <div>
       <div>
-        
-        <div>
-            <h2>Ticket ID: {{ ticket.ticketId }}</h2>
-            <p>{{ ticket.body }}</p>
-            <p>Resolved?: {{ ticket.solved ? 'Yes' : 'No' }}</p>
-            <p>Solution: {{ ticket.solution ? ticket.solution : 'N/A' }}</p>
-            <p>Solved by: {{ ticket.whoSolved ? ticket.whoSolved : 'N/A' }}</p>
-            <p>Bookmark: {{ ticket.bookmarked ? 'Yes' : 'No' }}</p>
-        </div>
+          <h2>Ticket ID: {{ ticket.ticketId }}</h2>
+          <p>Author ID: {{ ticket.author }}</p>
+          <p>{{ ticket.body }}</p>
+          <p>Resolved?: {{ ticket.solved ? 'Yes' : 'No' }}</p>
+          <p>Solution: {{ ticket.solution ? ticket.solution : 'N/A' }}</p>
+          <p>Solved by: {{ ticket.whoSolved ? ticket.whoSolved : 'N/A' }}</p>
+          <p>Bookmark: {{ ticket.bookmarked ? 'Yes' : 'No' }}</p>
+          <button (click)="goToBookmark()" class="bookmark-button">Bookmark</button>
+          <button *ngIf="!ticket.solved" (click)="goToSolvedTicket()" class="resolve-button">Resolve Ticket</button>
       </div>
-      
-    </li>
-  </ul>
+    </div>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
