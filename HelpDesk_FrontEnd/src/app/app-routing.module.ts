@@ -4,12 +4,14 @@ import { HelpDeskComponent } from './help-desk/help-desk.component';
 import { LoginComponent } from './login/login.component';
 import { BookmarkFormComponent } from './bookmark-form/bookmark-form.component';
 import { SolvedTicketComponent } from './solved-ticket/solved-ticket.component';
+import { BookmarksComponent } from './bookmarks/bookmarks.component';
 
 const routes: Routes = [
-  {path: 'helpDesk', component: HelpDeskComponent},
+  {path: 'help-desk', component: HelpDeskComponent},
   {path: 'login', component:LoginComponent},
   {path: 'bookMarkForm', component: BookmarkFormComponent},
-  {path: 'solved-ticket', component: SolvedTicketComponent }
+  {path: 'solved-ticket', component: SolvedTicketComponent },
+  {path: 'bookmarks', component: BookmarksComponent }
 ];
 
 @NgModule({

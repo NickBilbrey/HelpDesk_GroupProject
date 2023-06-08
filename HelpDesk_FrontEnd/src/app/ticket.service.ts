@@ -11,6 +11,7 @@ export class TicketService {
 
   currentUser?: User;
   currentTicket?: Tickets;
+  favorites: Tickets[] = [];
 
   constructor(private http: HttpClient) { }
 
@@ -41,5 +42,8 @@ export class TicketService {
     return this.http.post<Tickets>(this.url + '/api/Tickets', newTicket);
   }
   
-
+  saveSolvedTicket(solvedTicket: Tickets, oldTicketID: any): Observable<Tickets> {
+    oldTicketID = this.currentTicket?.ticketId;
+    return this.http.put<Tickets>(this.url + `/api/Tickets/${oldTicketID}`, solvedTicket )
+  }
 }
