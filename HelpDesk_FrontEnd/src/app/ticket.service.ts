@@ -10,6 +10,7 @@ import { map, switchMap } from 'rxjs/operators';
 export class TicketService {
 
   currentUser?: User;
+  currentTicket?: Tickets;
 
   constructor(private http: HttpClient) { }
 

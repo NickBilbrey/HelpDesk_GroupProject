@@ -1,1 +1,22 @@
-<p>solved-ticket works!</p>
+<nav class="navigation-bar">
+    <h1 class="help-desk-title">Grand Circus Help Desk</h1>
+    <a routerLink="/tickets" class="nav-link">Bookmarked Tickets</a>
+    <span class="nav-separator">|</span>
+    <a routerLink="/solved-tickets" class="nav-link">Solved Tickets</a>
+    <!-- Add more links for other pages as needed -->
+  </nav>
+
+
+      <div>
+        <div>
+            {{ticketToSolve?.ticketId}}
+            {{ticketToSolve?.author}}
+            {{ticketToSolve?.body}}
+
+        <form (ngSubmit)="solveTicket(solutionBody)">
+            <label for="solutionBody">Please enter your solution:</label>
+            <textarea id="solutionBody" [(ngModel)]="solutionBody" name="solutionBody" required></textarea>
+            <button type="submit">Solve</button>
+        </form>
+        </div>
+      </div>
