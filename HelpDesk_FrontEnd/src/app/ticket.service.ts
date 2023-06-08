@@ -35,6 +35,10 @@ export class TicketService {
     const user: User = { firstName, email }; // Create the user object without iD because it auto increments
     return this.http.post<User>(this.url + '/api/Users', user);
   }
+
+  createTicket(newTicket: Tickets): Observable<Tickets> {
+    return this.http.post<Tickets>(this.url + '/api/Tickets', newTicket);
+  }
   
 
 }

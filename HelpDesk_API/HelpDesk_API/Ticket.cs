@@ -5,7 +5,7 @@ namespace HelpDesk_API;
 
 public partial class Ticket
 {
-    public int TicketId { get; set; }
+    public int? TicketId { get; set; }
 
     public int? Author { get; set; }
 
